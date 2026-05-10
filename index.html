@@ -26,25 +26,12 @@
       gap: 14px;
       flex-shrink: 0;
     }
-    header h1 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.3px;
-    }
-    header p {
-      font-size: 12px;
-      color: #555;
-      font-style: italic;
-    }
+    header h1 { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+    header p  { font-size: 12px; color: #555; font-style: italic; }
 
-    .main {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
+    .main { display: flex; flex: 1; overflow: hidden; }
 
-    /* ── Controls panel ── */
+    /* ── Controls ── */
     .controls {
       width: 270px;
       flex-shrink: 0;
@@ -60,48 +47,49 @@
     .controls::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
 
     .section-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 9px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #555; margin-bottom: 9px;
     }
 
     textarea {
-      width: 100%;
-      height: 130px;
-      background: #222;
-      border: 1px solid #383838;
-      border-radius: 7px;
-      color: #e8e8e8;
-      padding: 10px 12px;
-      font-family: 'Special Elite', monospace;
-      font-size: 13px;
-      resize: vertical;
-      line-height: 1.55;
+      width: 100%; height: 130px;
+      background: #222; border: 1px solid #383838; border-radius: 7px;
+      color: #e8e8e8; padding: 10px 12px;
+      font-family: 'Special Elite', monospace; font-size: 13px;
+      resize: vertical; line-height: 1.55;
     }
     textarea:focus { outline: none; border-color: #555; }
     textarea::placeholder { color: #444; }
 
-    /* Font picker */
-    .font-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
+    /* Save row */
+    .save-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
     }
-    .font-btn {
-      padding: 9px 6px;
-      border: 1.5px solid #333;
+    .save-btn {
+      flex: 1;
+      padding: 8px 10px;
+      background: #2a2a2a;
+      border: 1.5px solid #444;
       border-radius: 7px;
+      color: #ccc;
+      font-size: 12px;
+      font-weight: 600;
       cursor: pointer;
-      text-align: center;
-      font-size: 13px;
-      background: #222;
-      color: #bbb;
       transition: border-color 0.12s, color 0.12s;
-      user-select: none;
-      line-height: 1.3;
+      text-align: center;
+    }
+    .save-btn:hover { border-color: #888; color: #fff; }
+    .save-btn.flash { border-color: #6fcf97; color: #6fcf97; }
+
+    /* Font picker */
+    .font-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .font-btn {
+      padding: 9px 6px; border: 1.5px solid #333; border-radius: 7px;
+      cursor: pointer; text-align: center; font-size: 13px;
+      background: #222; color: #bbb; user-select: none; line-height: 1.3;
+      transition: border-color 0.12s, color 0.12s;
     }
     .font-btn span { font-size: 10px; color: #555; display: block; margin-top: 2px; }
     .font-btn:hover { border-color: #555; color: #ddd; }
@@ -109,125 +97,175 @@
 
     /* Sliders */
     .row-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 6px;
+      display: flex; justify-content: space-between;
+      font-size: 12px; color: #888; margin-bottom: 6px;
     }
     .row-label strong { color: #ccc; }
     input[type=range] {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 4px;
-      background: #333;
-      border-radius: 2px;
-      outline: none;
-      cursor: pointer;
+      -webkit-appearance: none; width: 100%; height: 4px;
+      background: #333; border-radius: 2px; outline: none; cursor: pointer;
     }
     input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
+      -webkit-appearance: none; width: 14px; height: 14px;
+      border-radius: 50%; background: #fff; cursor: pointer;
     }
 
-    /* Color pickers */
-    .color-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    /* Color */
+    .color-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     input[type=color] {
-      width: 34px;
-      height: 28px;
-      border: 1.5px solid #444;
-      border-radius: 5px;
-      cursor: pointer;
-      background: none;
-      padding: 1px;
+      width: 34px; height: 28px; border: 1.5px solid #444; border-radius: 5px;
+      cursor: pointer; background: none; padding: 1px;
     }
     .color-label { font-size: 12px; color: #666; }
 
-    /* Alignment */
-    .align-row {
-      display: flex;
-      gap: 7px;
-    }
+    /* Align */
+    .align-row { display: flex; gap: 7px; }
     .align-btn {
-      flex: 1;
-      padding: 8px;
-      border: 1.5px solid #333;
-      border-radius: 7px;
-      background: #222;
-      color: #888;
-      cursor: pointer;
-      font-size: 15px;
+      flex: 1; padding: 8px; border: 1.5px solid #333; border-radius: 7px;
+      background: #222; color: #888; cursor: pointer; font-size: 15px;
       transition: border-color 0.12s, color 0.12s;
     }
     .align-btn:hover { border-color: #555; color: #ccc; }
     .align-btn.active { border-color: #e0e0e0; color: #fff; }
 
-    /* BG presets */
-    .bg-swatches {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
+    /* BG swatches */
+    .bg-swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
     .swatch {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
-      border: 2px solid #3a3a3a;
-      cursor: pointer;
-      transition: border-color 0.12s, transform 0.1s;
+      width: 32px; height: 32px; border-radius: 7px; border: 2px solid #3a3a3a;
+      cursor: pointer; transition: border-color 0.12s, transform 0.1s;
     }
     .swatch:hover { transform: scale(1.1); }
     .swatch.active { border-color: #fff; }
 
-    /* Format / size */
-    .format-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
-    }
+    /* Format */
+    .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
     .format-btn {
-      padding: 8px 4px;
-      border: 1.5px solid #333;
-      border-radius: 7px;
-      cursor: pointer;
-      text-align: center;
-      font-size: 11px;
-      background: #222;
-      color: #888;
+      padding: 8px 4px; border: 1.5px solid #333; border-radius: 7px;
+      cursor: pointer; text-align: center; font-size: 11px;
+      background: #222; color: #888; user-select: none;
       transition: border-color 0.12s, color 0.12s;
-      user-select: none;
     }
     .format-btn strong { display: block; font-size: 12px; color: #bbb; margin-bottom: 1px; }
     .format-btn:hover { border-color: #555; color: #ccc; }
     .format-btn.active { border-color: #e0e0e0; color: #ccc; background: #2a2a2a; }
     .format-btn.active strong { color: #fff; }
 
-    /* Download button */
+    /* Download */
     .download-btn {
-      width: 100%;
-      padding: 12px;
-      background: #fff;
-      color: #111;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-      transition: background 0.15s;
+      width: 100%; padding: 12px; background: #fff; color: #111;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 700;
+      cursor: pointer; letter-spacing: 0.3px; transition: background 0.15s;
     }
     .download-btn:hover { background: #e0e0e0; }
     .download-btn:active { background: #c0c0c0; }
+
+    /* Style toggles */
+    .style-row { display: flex; gap: 7px; }
+    .style-btn {
+      flex: 1; padding: 7px; border: 1.5px solid #333; border-radius: 7px;
+      background: #222; color: #888; cursor: pointer; font-size: 14px;
+      transition: border-color 0.12s, color 0.12s; text-align: center;
+    }
+    .style-btn:hover { border-color: #555; }
+    .style-btn.active { border-color: #e0e0e0; color: #fff; }
+    #style-bold { font-weight: 700; }
+    #style-italic { font-style: italic; }
+
+    /* ── Drafts panel (desktop) ── */
+    .drafts-panel {
+      width: 230px;
+      flex-shrink: 0;
+      background: #141414;
+      border-left: 1px solid #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .drafts-header {
+      padding: 14px 14px 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #555;
+      border-bottom: 1px solid #222;
+      flex-shrink: 0;
+    }
+    .drafts-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .drafts-list::-webkit-scrollbar { width: 4px; }
+    .drafts-list::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+    .draft-card {
+      background: #1e1e1e;
+      border: 1.5px solid #2e2e2e;
+      border-radius: 8px;
+      padding: 10px 10px 8px;
+      cursor: pointer;
+      transition: border-color 0.12s;
+      position: relative;
+    }
+    .draft-card:hover { border-color: #555; }
+    .draft-text {
+      font-size: 12px;
+      color: #ccc;
+      line-height: 1.45;
+      word-break: break-word;
+      padding-right: 20px;
+      margin-bottom: 7px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .draft-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .draft-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+    .draft-info {
+      font-size: 10px;
+      color: #555;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .draft-del {
+      position: absolute;
+      top: 7px; right: 7px;
+      width: 18px; height: 18px;
+      background: none;
+      border: none;
+      color: #444;
+      font-size: 14px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      border-radius: 3px;
+      transition: color 0.12s;
+    }
+    .draft-del:hover { color: #e05555; }
+
+    .drafts-empty {
+      text-align: center;
+      color: #3a3a3a;
+      font-size: 12px;
+      padding: 30px 10px;
+      line-height: 1.6;
+    }
 
     /* ── Preview area ── */
     .preview-area {
@@ -238,9 +276,7 @@
       background: #0d0d0d;
       padding: 32px;
       overflow: hidden;
-      position: relative;
     }
-
     #preview-img {
       box-shadow: 0 12px 60px rgba(0,0,0,0.7);
       display: block;
@@ -251,42 +287,26 @@
 
     canvas { display: none; }
 
-    /* Bold/italic toggles */
-    .style-row {
-      display: flex;
-      gap: 7px;
-    }
-    .style-btn {
-      flex: 1;
-      padding: 7px;
-      border: 1.5px solid #333;
-      border-radius: 7px;
-      background: #222;
-      color: #888;
-      cursor: pointer;
-      font-size: 14px;
-      transition: border-color 0.12s, color 0.12s;
-      text-align: center;
-    }
-    .style-btn:hover { border-color: #555; }
-    .style-btn.active { border-color: #e0e0e0; color: #fff; }
-    #style-bold { font-weight: 700; }
-    #style-italic { font-style: italic; }
-
     /* ── Mobile tab bar ── */
-    .tab-bar {
+    .tab-bar { display: none; }
+
+    /* ── Drafts mobile panel ── */
+    .drafts-mobile {
       display: none;
+      flex: 1;
+      flex-direction: column;
+      background: #141414;
+      overflow: hidden;
     }
+    .drafts-mobile .drafts-list { flex: 1; padding: 12px; }
 
     @media (max-width: 700px) {
       body { overflow: hidden; }
+      .main { flex-direction: column; }
 
-      .main {
-        flex-direction: column;
-        position: relative;
-      }
+      /* Hide desktop drafts panel on mobile */
+      .drafts-panel { display: none; }
 
-      /* Tab bar pinned to bottom */
       .tab-bar {
         display: flex;
         flex-shrink: 0;
@@ -295,37 +315,26 @@
         z-index: 10;
       }
       .tab-btn {
-        flex: 1;
-        padding: 14px;
-        background: none;
-        border: none;
-        color: #555;
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        letter-spacing: 0.3px;
+        flex: 1; padding: 13px 4px;
+        background: none; border: none;
+        color: #555; font-size: 12px; font-weight: 600;
+        cursor: pointer; letter-spacing: 0.2px;
         transition: color 0.15s;
       }
       .tab-btn.active { color: #fff; border-top: 2px solid #fff; margin-top: -1px; }
 
-      /* Controls: full screen, hidden when preview tab active */
       .controls {
-        width: 100%;
-        flex: 1;
-        border-right: none;
-        border-bottom: 1px solid #2a2a2a;
-        display: flex;
+        width: 100%; flex: 1;
+        border-right: none; border-bottom: 1px solid #2a2a2a;
       }
-      .controls.hidden { display: none; }
+      .controls.hidden, .preview-area.hidden { display: none; }
 
-      /* Preview area: full screen, hidden when edit tab active */
-      .preview-area {
-        flex: 1;
-        padding: 20px;
-      }
-      .preview-area.hidden { display: none; }
+      .drafts-mobile.hidden { display: none; }
+      .drafts-mobile { display: flex; }
+      .drafts-mobile:not(.hidden) { display: flex; }
 
-      /* Preview image fills mobile screen properly */
+      .preview-area { flex: 1; padding: 20px; }
+
       #preview-img {
         width: 100% !important;
         height: auto !important;
@@ -333,19 +342,15 @@
         object-fit: contain;
       }
 
-      /* Larger touch targets */
       input[type=range] { height: 6px; }
       input[type=range]::-webkit-slider-thumb { width: 20px; height: 20px; }
-
       .swatch { width: 38px; height: 38px; }
-
       textarea { height: 100px; font-size: 15px; }
+      .download-btn { padding: 15px; font-size: 15px; }
 
-      /* Download button sticky at bottom of controls */
-      .download-btn {
-        padding: 15px;
-        font-size: 15px;
-      }
+      /* Larger draft cards on mobile */
+      .draft-card { padding: 12px 12px 10px; }
+      .draft-text { font-size: 13px; }
     }
   </style>
 </head>
@@ -358,38 +363,27 @@
 
 <div class="main">
 
-  <div class="controls">
+  <!-- ── Controls ── -->
+  <div class="controls" id="panel-edit">
 
-    <!-- Text -->
     <div>
       <div class="section-label">Your Text</div>
       <textarea id="text-input" placeholder="Type your sarcastic masterpiece here...">Oh sure, that's a GREAT idea.</textarea>
-    </div>
-
-    <!-- Font -->
-    <div>
-      <div class="section-label">Font</div>
-      <div class="font-grid">
-        <div class="font-btn active" data-font="Special Elite" style="font-family:'Special Elite'">
-          Special Elite
-          <span>distressed</span>
-        </div>
-        <div class="font-btn" data-font="Courier Prime" style="font-family:'Courier Prime'">
-          Courier Prime
-          <span>classic</span>
-        </div>
-        <div class="font-btn" data-font="Cutive Mono" style="font-family:'Cutive Mono'">
-          Cutive Mono
-          <span>elegant</span>
-        </div>
-        <div class="font-btn" data-font="VT323" style="font-family:'VT323'; font-size:16px;">
-          VT323
-          <span>retro terminal</span>
-        </div>
+      <div class="save-row">
+        <button class="save-btn" id="save-btn">+ Save Draft</button>
       </div>
     </div>
 
-    <!-- Style toggles -->
+    <div>
+      <div class="section-label">Font</div>
+      <div class="font-grid">
+        <div class="font-btn active" data-font="Special Elite" style="font-family:'Special Elite'">Special Elite<span>distressed</span></div>
+        <div class="font-btn" data-font="Courier Prime" style="font-family:'Courier Prime'">Courier Prime<span>classic</span></div>
+        <div class="font-btn" data-font="Cutive Mono" style="font-family:'Cutive Mono'">Cutive Mono<span>elegant</span></div>
+        <div class="font-btn" data-font="VT323" style="font-family:'VT323'; font-size:16px;">VT323<span>retro terminal</span></div>
+      </div>
+    </div>
+
     <div>
       <div class="section-label">Style</div>
       <div class="style-row">
@@ -398,19 +392,16 @@
       </div>
     </div>
 
-    <!-- Font size -->
     <div>
       <div class="row-label">Font Size <strong id="font-size-val">52</strong>px</div>
       <input type="range" id="font-size" min="18" max="130" value="52">
     </div>
 
-    <!-- Line height -->
     <div>
       <div class="row-label">Line Height <strong id="line-height-val">1.5</strong></div>
       <input type="range" id="line-height" min="100" max="250" value="150">
     </div>
 
-    <!-- Text color -->
     <div>
       <div class="section-label">Text Color</div>
       <div class="color-row">
@@ -419,30 +410,28 @@
       </div>
     </div>
 
-    <!-- Text alignment -->
     <div>
       <div class="section-label">Alignment</div>
       <div class="align-row">
-        <button class="align-btn active" data-align="left" title="Left">&#8676;</button>
-        <button class="align-btn" data-align="center" title="Center">&#8660;</button>
-        <button class="align-btn" data-align="right" title="Right">&#8677;</button>
+        <button class="align-btn active" data-align="left">&#8676;</button>
+        <button class="align-btn" data-align="center">&#8660;</button>
+        <button class="align-btn" data-align="right">&#8677;</button>
       </div>
     </div>
 
-    <!-- Background -->
     <div>
       <div class="section-label">Background</div>
       <div class="bg-swatches">
-        <div class="swatch active" data-color="#ffffff" style="background:#ffffff" title="White"></div>
-        <div class="swatch" data-color="#faf7f2" style="background:#faf7f2" title="Cream"></div>
-        <div class="swatch" data-color="#f0ead6" style="background:#f0ead6" title="Old paper"></div>
-        <div class="swatch" data-color="#e8e0d0" style="background:#e8e0d0" title="Tan"></div>
-        <div class="swatch" data-color="#1a1a1a" style="background:#1a1a1a; border-color:#555" title="Black"></div>
-        <div class="swatch" data-color="#0d1b2a" style="background:#0d1b2a; border-color:#555" title="Dark blue"></div>
-        <div class="swatch" data-color="#1e1e2e" style="background:#1e1e2e; border-color:#555" title="Midnight"></div>
-        <div class="swatch" data-color="#2d1b33" style="background:#2d1b33; border-color:#555" title="Dark purple"></div>
-        <div class="swatch" data-color="#1a2e1a" style="background:#1a2e1a; border-color:#555" title="Dark green"></div>
-        <div class="swatch" data-color="#3d1515" style="background:#3d1515; border-color:#555" title="Dark red"></div>
+        <div class="swatch active" data-color="#ffffff" style="background:#ffffff"></div>
+        <div class="swatch" data-color="#faf7f2" style="background:#faf7f2"></div>
+        <div class="swatch" data-color="#f0ead6" style="background:#f0ead6"></div>
+        <div class="swatch" data-color="#e8e0d0" style="background:#e8e0d0"></div>
+        <div class="swatch" data-color="#1a1a1a" style="background:#1a1a1a;border-color:#555"></div>
+        <div class="swatch" data-color="#0d1b2a" style="background:#0d1b2a;border-color:#555"></div>
+        <div class="swatch" data-color="#1e1e2e" style="background:#1e1e2e;border-color:#555"></div>
+        <div class="swatch" data-color="#2d1b33" style="background:#2d1b33;border-color:#555"></div>
+        <div class="swatch" data-color="#1a2e1a" style="background:#1a2e1a;border-color:#555"></div>
+        <div class="swatch" data-color="#3d1515" style="background:#3d1515;border-color:#555"></div>
       </div>
       <div class="color-row">
         <input type="color" id="bg-color" value="#ffffff">
@@ -450,13 +439,11 @@
       </div>
     </div>
 
-    <!-- Padding -->
     <div>
       <div class="row-label">Margin <strong id="padding-val">90</strong>px</div>
       <input type="range" id="padding" min="20" max="220" value="90">
     </div>
 
-    <!-- Format -->
     <div>
       <div class="section-label">Format</div>
       <div class="format-grid">
@@ -467,22 +454,34 @@
       </div>
     </div>
 
-    <!-- Download -->
     <button class="download-btn" id="download-btn">↓ Download Image</button>
 
-  </div><!-- /controls -->
+  </div>
 
-  <div class="preview-area">
+  <!-- ── Preview ── -->
+  <div class="preview-area" id="panel-preview">
     <img id="preview-img" alt="Preview">
   </div>
 
-  <!-- Mobile tab bar -->
+  <!-- ── Drafts (desktop sidebar) ── -->
+  <div class="drafts-panel">
+    <div class="drafts-header">Saved Drafts</div>
+    <div class="drafts-list" id="drafts-list-desktop"></div>
+  </div>
+
+  <!-- ── Mobile tab bar ── -->
   <div class="tab-bar">
     <button class="tab-btn active" data-tab="edit">✏️ Edit</button>
     <button class="tab-btn" data-tab="preview">🖼 Preview</button>
+    <button class="tab-btn" data-tab="drafts">📋 Drafts</button>
   </div>
 
 </div><!-- /main -->
+
+<!-- Drafts mobile panel (lives outside .main flow, toggled by tab) -->
+<div class="drafts-mobile hidden" id="panel-drafts">
+  <div class="drafts-list" id="drafts-list-mobile"></div>
+</div>
 
 <canvas id="canvas"></canvas>
 
@@ -506,22 +505,17 @@
     padding:    90,
   };
 
-  // ── Word-wrap helper ──────────────────────────────────────────────────────
+  // ── Word-wrap ─────────────────────────────────────────────────────────────
   function wrapText(text, maxWidth) {
-    const paragraphs = text.split('\n');
     const result = [];
-    for (const para of paragraphs) {
+    for (const para of text.split('\n')) {
       if (para.trim() === '') { result.push(''); continue; }
-      const words = para.split(' ');
       let line = '';
-      for (const word of words) {
+      for (const word of para.split(' ')) {
         const test = line ? line + ' ' + word : word;
         if (ctx.measureText(test).width > maxWidth && line) {
-          result.push(line);
-          line = word;
-        } else {
-          line = test;
-        }
+          result.push(line); line = word;
+        } else { line = test; }
       }
       if (line) result.push(line);
     }
@@ -533,132 +527,200 @@
     canvas.width  = state.width;
     canvas.height = state.height;
 
-    // Background
     ctx.fillStyle = state.bgColor;
     ctx.fillRect(0, 0, state.width, state.height);
 
-    // Font string
     const weight  = state.bold   ? 'bold '   : '';
     const slant   = state.italic ? 'italic ' : '';
-    const fontStr = `${slant}${weight}${state.fontSize}px '${state.font}', monospace`;
-    ctx.font         = fontStr;
+    ctx.font         = `${slant}${weight}${state.fontSize}px '${state.font}', monospace`;
     ctx.fillStyle    = state.textColor;
     ctx.textBaseline = 'top';
     ctx.textAlign    = state.align;
 
-    const maxWidth  = state.width - state.padding * 2;
+    const maxWidth   = state.width - state.padding * 2;
     const lineHeight = state.fontSize * state.lineHeight;
+    const lines      = wrapText(state.text, maxWidth);
+    const startY     = Math.max(state.padding, (state.height - lines.length * lineHeight) / 2);
+    const x = state.align === 'left'   ? state.padding
+             : state.align === 'center' ? state.width / 2
+             :                            state.width - state.padding;
 
-    const lines     = wrapText(state.text, maxWidth);
-    const totalH    = lines.length * lineHeight;
-    const startY    = Math.max(state.padding, (state.height - totalH) / 2);
+    lines.forEach((line, i) => ctx.fillText(line, x, startY + i * lineHeight));
 
-    let x;
-    if      (state.align === 'left')   x = state.padding;
-    else if (state.align === 'center') x = state.width / 2;
-    else                               x = state.width - state.padding;
-
-    lines.forEach((line, i) => {
-      ctx.fillText(line, x, startY + i * lineHeight);
-    });
-
-    // Update preview
-    const dataURL = canvas.toDataURL('image/png');
-    preview.src = dataURL;
-
-    const area = document.querySelector('.preview-area');
-    const availW = area.offsetWidth  - 64;
-    const availH = area.offsetHeight - 64;
-    const scale  = Math.min(availW / state.width, availH / state.height, 1);
+    preview.src = canvas.toDataURL('image/png');
+    const area   = document.getElementById('panel-preview');
+    const scale  = Math.min((area.offsetWidth - 64) / state.width, (area.offsetHeight - 64) / state.height, 1);
     preview.style.width  = (state.width  * scale) + 'px';
     preview.style.height = (state.height * scale) + 'px';
   }
 
-  // Render once fonts are ready
   document.fonts.ready.then(render);
 
-  // ── Bindings ──────────────────────────────────────────────────────────────
+  // ── Apply a full state snapshot to the UI ─────────────────────────────────
+  function applyState(s) {
+    Object.assign(state, s);
 
-  document.getElementById('text-input').addEventListener('input', e => {
-    state.text = e.target.value;
+    document.getElementById('text-input').value = s.text;
+    document.getElementById('font-size').value  = s.fontSize;
+    document.getElementById('font-size-val').textContent = s.fontSize;
+    document.getElementById('line-height').value = Math.round(s.lineHeight * 100);
+    document.getElementById('line-height-val').textContent = s.lineHeight.toFixed(1);
+    document.getElementById('text-color').value = s.textColor;
+    document.getElementById('bg-color').value   = s.bgColor;
+    document.getElementById('padding').value    = s.padding;
+    document.getElementById('padding-val').textContent = s.padding;
+
+    document.querySelectorAll('.font-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.font === s.font));
+    document.querySelectorAll('.style-btn').forEach(b => {
+      const on = b.dataset.style === 'bold' ? s.bold : s.italic;
+      b.classList.toggle('active', on);
+    });
+    document.querySelectorAll('.align-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.align === s.align));
+    document.querySelectorAll('.format-btn').forEach(b =>
+      b.classList.toggle('active', +b.dataset.w === s.width && +b.dataset.h === s.height));
+    document.querySelectorAll('.swatch').forEach(sw =>
+      sw.classList.toggle('active', sw.dataset.color === s.bgColor));
+
     render();
+  }
+
+  // ── Drafts (localStorage) ─────────────────────────────────────────────────
+  function loadDrafts() {
+    try { return JSON.parse(localStorage.getItem('sarcasty-drafts') || '[]'); }
+    catch { return []; }
+  }
+  function saveDrafts(drafts) {
+    localStorage.setItem('sarcasty-drafts', JSON.stringify(drafts));
+  }
+
+  function buildDraftCard(draft) {
+    const card = document.createElement('div');
+    card.className = 'draft-card';
+
+    const preview = document.createElement('div');
+    preview.className = 'draft-text';
+    preview.textContent = draft.text || '(empty)';
+
+    const meta = document.createElement('div');
+    meta.className = 'draft-meta';
+
+    const bgDot = document.createElement('div');
+    bgDot.className = 'draft-dot';
+    bgDot.style.background = draft.bgColor;
+
+    const txtDot = document.createElement('div');
+    txtDot.className = 'draft-dot';
+    txtDot.style.background = draft.textColor;
+
+    const info = document.createElement('div');
+    info.className = 'draft-info';
+    info.textContent = `${draft.font.split(' ')[0]} · ${draft.fontSize}px`;
+
+    const del = document.createElement('button');
+    del.className = 'draft-del';
+    del.textContent = '×';
+    del.title = 'Delete';
+    del.addEventListener('click', e => {
+      e.stopPropagation();
+      const drafts = loadDrafts().filter(d => d.id !== draft.id);
+      saveDrafts(drafts);
+      renderDraftLists();
+    });
+
+    meta.append(bgDot, txtDot, info);
+    card.append(preview, meta, del);
+
+    card.addEventListener('click', () => {
+      applyState(draft);
+      // On mobile switch to edit tab after loading
+      if (window.innerWidth <= 700) switchTab('edit');
+    });
+
+    return card;
+  }
+
+  function renderDraftLists() {
+    const drafts = loadDrafts();
+    ['desktop', 'mobile'].forEach(which => {
+      const list = document.getElementById(`drafts-list-${which}`);
+      list.innerHTML = '';
+      if (drafts.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'drafts-empty';
+        empty.textContent = 'No drafts yet.\nSave one to see it here.';
+        list.appendChild(empty);
+      } else {
+        drafts.forEach(d => list.appendChild(buildDraftCard(d)));
+      }
+    });
+  }
+
+  document.getElementById('save-btn').addEventListener('click', () => {
+    const drafts = loadDrafts();
+    const draft  = { ...state, id: Date.now() };
+    drafts.unshift(draft);
+    saveDrafts(drafts);
+    renderDraftLists();
+
+    const btn = document.getElementById('save-btn');
+    btn.textContent = '✓ Saved!';
+    btn.classList.add('flash');
+    setTimeout(() => { btn.textContent = '+ Save Draft'; btn.classList.remove('flash'); }, 1200);
   });
 
-  document.querySelectorAll('.font-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.font = btn.dataset.font;
-      render();
-    });
-  });
+  renderDraftLists();
 
-  document.querySelectorAll('.style-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      state[btn.dataset.style] = btn.classList.contains('active');
-      render();
-    });
-  });
+  // ── Control bindings ──────────────────────────────────────────────────────
+  document.getElementById('text-input').addEventListener('input', e => { state.text = e.target.value; render(); });
+
+  document.querySelectorAll('.font-btn').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.font-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active'); state.font = btn.dataset.font; render();
+  }));
+
+  document.querySelectorAll('.style-btn').forEach(btn => btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    state[btn.dataset.style] = btn.classList.contains('active'); render();
+  }));
 
   document.getElementById('font-size').addEventListener('input', e => {
-    state.fontSize = parseInt(e.target.value);
-    document.getElementById('font-size-val').textContent = e.target.value;
-    render();
+    state.fontSize = +e.target.value;
+    document.getElementById('font-size-val').textContent = e.target.value; render();
   });
-
   document.getElementById('line-height').addEventListener('input', e => {
-    const val = parseInt(e.target.value) / 100;
-    state.lineHeight = val;
-    document.getElementById('line-height-val').textContent = val.toFixed(1);
-    render();
+    state.lineHeight = +e.target.value / 100;
+    document.getElementById('line-height-val').textContent = state.lineHeight.toFixed(1); render();
   });
+  document.getElementById('text-color').addEventListener('input', e => { state.textColor = e.target.value; render(); });
 
-  document.getElementById('text-color').addEventListener('input', e => {
-    state.textColor = e.target.value;
-    render();
-  });
+  document.querySelectorAll('.align-btn').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.align-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active'); state.align = btn.dataset.align; render();
+  }));
 
-  document.querySelectorAll('.align-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.align-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.align = btn.dataset.align;
-      render();
-    });
-  });
-
-  document.querySelectorAll('.swatch').forEach(sw => {
-    sw.addEventListener('click', () => {
-      document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
-      sw.classList.add('active');
-      state.bgColor = sw.dataset.color;
-      document.getElementById('bg-color').value = sw.dataset.color.startsWith('#') ? sw.dataset.color : '#ffffff';
-      render();
-    });
-  });
+  document.querySelectorAll('.swatch').forEach(sw => sw.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active'); state.bgColor = sw.dataset.color;
+    document.getElementById('bg-color').value = sw.dataset.color; render();
+  }));
 
   document.getElementById('bg-color').addEventListener('input', e => {
     document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
-    state.bgColor = e.target.value;
-    render();
+    state.bgColor = e.target.value; render();
   });
 
   document.getElementById('padding').addEventListener('input', e => {
-    state.padding = parseInt(e.target.value);
-    document.getElementById('padding-val').textContent = e.target.value;
-    render();
+    state.padding = +e.target.value;
+    document.getElementById('padding-val').textContent = e.target.value; render();
   });
 
-  document.querySelectorAll('.format-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.width  = parseInt(btn.dataset.w);
-      state.height = parseInt(btn.dataset.h);
-      render();
-    });
-  });
+  document.querySelectorAll('.format-btn').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.width = +btn.dataset.w; state.height = +btn.dataset.h; render();
+  }));
 
   document.getElementById('download-btn').addEventListener('click', () => {
     const a = document.createElement('a');
@@ -667,19 +729,22 @@
     a.click();
   });
 
-  new ResizeObserver(render).observe(document.querySelector('.preview-area'));
+  new ResizeObserver(render).observe(document.getElementById('panel-preview'));
 
   // ── Mobile tabs ───────────────────────────────────────────────────────────
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const tab = btn.dataset.tab;
-      document.querySelector('.controls').classList.toggle('hidden', tab !== 'edit');
-      document.querySelector('.preview-area').classList.toggle('hidden', tab !== 'preview');
-      if (tab === 'preview') render();
-    });
-  });
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    document.getElementById('panel-edit').classList.toggle('hidden', tab !== 'edit');
+    document.getElementById('panel-preview').classList.toggle('hidden', tab !== 'preview');
+    document.getElementById('panel-drafts').classList.toggle('hidden', tab !== 'drafts');
+    if (tab === 'preview') render();
+  }
+
+  document.querySelectorAll('.tab-btn').forEach(btn =>
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+
+  // Move mobile drafts panel inside .main so it participates in flex layout
+  document.querySelector('.main').appendChild(document.getElementById('panel-drafts'));
 </script>
 </body>
 </html>
